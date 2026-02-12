@@ -10,7 +10,7 @@ const app = express();
 app.use(cors({
     origin: [
         'http://localhost:4200',
-        'https://your-vercel-app.vercel.app'
+        'https://document-management-system-jet.vercel.app'
     ],
     credentials: true
 }));
