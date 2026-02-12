@@ -1,0 +1,96 @@
+<h2>Upload Document</h2>
+
+<div class="upload-container">
+
+    <!-- CREATE NEW -->
+    <div class="upload-card">
+
+        <h3>Create New Document</h3>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Document Title</mat-label>
+            <input matInput [(ngModel)]="title">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Tags (comma separated)</mat-label>
+            <input matInput [(ngModel)]="tags">
+        </mat-form-field>
+
+        <input type="file" #createFileInput hidden (change)="onCreateFileSelected($event)" />
+
+        <button mat-stroked-button type="button" (click)="createFileInput.click()">
+
+            <mat-icon>attach_file</mat-icon>
+            Choose File
+
+        </button>
+
+        <span *ngIf="createFile" class="file-name">
+            {{ createFile.name }}
+        </span>
+
+        <br><br>
+
+        <button mat-raised-button color="primary" (click)="upload()" [disabled]="loading">
+
+            <mat-icon>upload</mat-icon>
+            Upload
+
+        </button>
+
+    </div>
+
+    <hr>
+
+    <!-- UPDATE VERSION -->
+    <div class="upload-card">
+
+        <h3>Upload New Version</h3>
+
+        <div *ngIf="!loadingEditable && editableDocuments.length > 0">
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Select Document</mat-label>
+                <mat-select [(ngModel)]="selectedDocumentId">
+                    <mat-option *ngFor="let doc of editableDocuments" [value]="doc._id">
+                        {{ doc.title }} (v{{ doc.currentVersion }})
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <input type="file" #updateFileInput hidden (change)="onUpdateFileSelected($event)" />
+
+            <button mat-stroked-button type="button" (click)="updateFileInput.click()">
+
+                <mat-icon>attach_file</mat-icon>
+                Choose File
+
+            </button>
+
+            <span *ngIf="updateFile" class="file-name">
+                {{ updateFile.name }}
+            </span>
+
+            <br><br>
+
+            <button mat-raised-button color="accent" (click)="updateVersion()" [disabled]="loading">
+
+                <mat-icon>upgrade</mat-icon>
+                Upload New Version
+
+            </button>
+
+        </div>
+
+        <div *ngIf="!loadingEditable && editableDocuments.length === 0">
+            You do not have edit permission for any documents.
+        </div>
+
+    </div>
+
+</div>
+
+<div *ngIf="loading" class="loading">
+    <mat-spinner diameter="40"></mat-spinner>
+</div>

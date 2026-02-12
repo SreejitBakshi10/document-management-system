@@ -1,0 +1,20 @@
+# Backend
+dms-backend/node_modules/
+dms-backend/.env
+dms-backend/src/uploads/
+
+# Frontend
+dms-frontend/node_modules/
+dms-frontend/dist/
+dms-frontend/.angular/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/

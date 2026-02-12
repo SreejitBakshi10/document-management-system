@@ -1,0 +1,21 @@
+.auth-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f6f8;
+}
+
+.auth-card {
+    width: 400px;
+    padding: 20px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.auth-footer {
+    margin-top: 15px;
+    text-align: center;
+}

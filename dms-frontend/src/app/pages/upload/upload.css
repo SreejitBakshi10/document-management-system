@@ -1,0 +1,23 @@
+.upload-container {
+    max-width: 700px;
+}
+
+.upload-card {
+    margin-bottom: 30px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.file-name {
+    margin-left: 10px;
+    font-size: 13px;
+    color: #555;
+}

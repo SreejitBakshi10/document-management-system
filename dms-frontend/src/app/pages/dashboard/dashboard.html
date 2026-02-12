@@ -1,0 +1,82 @@
+<mat-sidenav-container class="container">
+
+    <mat-sidenav #sidenav [mode]="isMobile ? 'over' : 'side'" [opened]="!isMobile" class="sidenav">
+
+        <div class="logo">
+            <i class="fas fa-folder-tree logo-icon"></i>
+            <div class="logo-text">
+                <span class="app-name">DocuVault</span>
+                <span class="app-sub">Document Management System</span>
+            </div>
+        </div>
+
+        <mat-nav-list>
+            <a mat-list-item routerLink="/dashboard/documents" (click)="isMobile ? sidenav.close() : null">
+                <i class="fas fa-file-alt icon"></i>
+                Documents
+            </a>
+
+            <a mat-list-item routerLink="/dashboard/upload" (click)="isMobile ? sidenav.close() : null">
+                <i class="fas fa-upload icon"></i>
+                Upload
+            </a>
+
+            <div *ngIf="isMobile" class="mobile-menu-items">
+                <mat-divider></mat-divider>
+
+                <div mat-subheader>Profile</div>
+                <a mat-list-item>
+                    <i class="fas fa-user-circle icon"></i>
+                    {{ userName }}
+                </a>
+
+                <a mat-list-item (click)="logout(); sidenav.close()">
+                    <i class="fas fa-sign-out-alt icon" style="color: red;"></i>
+                    Logout
+                </a>
+            </div>
+
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+        <mat-toolbar color="primary" class="toolbar">
+
+            <button mat-icon-button *ngIf="isMobile" (click)="sidenav.toggle()" class="hamburger">
+                <mat-icon>menu</mat-icon>
+            </button>
+
+            <span class="toolbar-title">
+                <i class="fas fa-layer-group" *ngIf="!isMobile"></i>
+                Dashboard
+            </span>
+
+            <span class="spacer"></span>
+
+            <div class="desktop-actions" *ngIf="!isMobile">
+                <span class="user-info">
+                    <i class="fas fa-user"></i>
+                    {{ userName }}
+                </span>
+
+                <button mat-button (click)="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+
+        </mat-toolbar>
+
+        <div class="main-content">
+            <router-outlet></router-outlet>
+        </div>
+
+        <footer class="footer">
+            © 2026 DocuVault | Sreejit Bakshi
+        </footer>
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
