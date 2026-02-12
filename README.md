@@ -264,7 +264,7 @@ flowchart BT
 ## Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/docuvault.git
+git clone https://github.com/SreejitBakshi10/document-management-system.git
 cd docuvault
 ```
 
