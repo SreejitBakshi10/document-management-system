@@ -9,7 +9,7 @@
 ![Angular](https://img.shields.io/badge/Angular-21.1.3-DD0031?style=for-the-badge\&logo=angular\&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-22.14.0-339933?style=for-the-badge\&logo=node.js\&logoColor=white)
 
-**[Live Demo](#)**
+**[Live Demo](https://document-management-system-jet.vercel.app)**
 
 <img src="screenshots/icon.png" height="60" alt="dms">
 
@@ -595,4 +595,4 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 **Project Link**: [https://github.com/SreejitBakshi10/document-management-system](https://github.com/SreejitBakshi10/document-management-system)
 
-**Live Demo**: [#](#)
+**Live Demo**: [https://document-management-system-jet.vercel.app](https://document-management-system-jet.vercel.app)

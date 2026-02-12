@@ -296,7 +296,7 @@ exports.downloadDocument = async (req, res) => {
             return res.status(404).json({ message: "File not found" });
         }
 
-        const absolutePath = path.join(process.cwd(), version.filePath);
+        const absolutePath = version.filePath;
 
         if (!fs.existsSync(absolutePath)) {
             console.log("File not found at:", absolutePath);
@@ -331,7 +331,7 @@ exports.deleteDocument = async (req, res) => {
 
         // Delete files from disk
         for (const version of versions) {
-            const filePath = path.join(process.cwd(), version.filePath);
+            const filePath = version.filePath;
 
             if (fs.existsSync(filePath)) {
                 fs.unlinkSync(filePath);
